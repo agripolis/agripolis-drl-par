@@ -6,15 +6,15 @@
 import os
 
 runs=9
-home=os.environ['HOME']
+home=os.environ['HOME']+'/agripolis-drl-par/'
 
-agpy=home+"/agripolis-drl/build/src/agp24"
-inputfiles=home+"/agripolis-drl/inputfiles/"
+agpy=home+"build/src/agp24"
+inputfiles=home+"inputfiles/"
 temp_scenario="scenario-temp.txt"
 
 nInvs = 47
-epochs = 2000 #3000
-simus = 50 #50
-topn = 5
+epochs = 10 #2000 #3000
+simus = 10 #50 #50
+topn = 2 #5
 QSIZE = simus
 
