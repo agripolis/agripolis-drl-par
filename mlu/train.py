@@ -49,7 +49,8 @@ best_c_reward = 0
 min_c_reward = 0
 
 res=queue.PriorityQueue(QSIZE)
-initzmq()
+zmq_port_base = 2 
+initzmq(zmq_port_base)
 
 def outputScaler(e, scaler):
     sf = open(resdir+"c-scaler-"+str(e)+".txt", "wt")
@@ -75,9 +76,10 @@ def outputModel(e):
 
 
 def testing(e):
+    global zmq_port_base
     #print("evaluating ...\n")
     closed=False
-    agpt=subprocess.Popen([agpy, inputfiles, mkscenario(inputfiles+temp_scenario, e) ], 
+    agpt=subprocess.Popen([agpy, "--ZMQ_PORT_BASE=" + str(zmq_port_base), inputfiles, mkscenario(inputfiles+temp_scenario, e) ], 
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True)
@@ -118,6 +120,8 @@ def get_ep(e):
     global best_c_reward
     global best_reward
     global min_c_reward
+    global zmq_port_base
+
     max_sig=0.7
     min_sig=0.1
     d_sig=0.1
@@ -131,7 +135,7 @@ def get_ep(e):
 
         closed=False
         #subprocess.run(agripolis, iniputfiles])
-        agp=subprocess.Popen([agpy, inputfiles ], 
+        agp=subprocess.Popen([agpy, "--ZMQ_PORT_BASE=" + str(zmq_port_base), inputfiles ], 
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True)

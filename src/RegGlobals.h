@@ -257,10 +257,14 @@ public:
     int NO_COLS;
     int TRANSPORT_COSTS;
     
-	int RUNS;
+    int RUNS;
     int TEILER;
+    int ZMQ_PORT_BASE;
+    int ZMQ_PORT_SEND;
+    int ZMQ_PORT_RECV;
+
     
-	vector<double> LAND_INPUT_OF_TYPE;
+    vector<double> LAND_INPUT_OF_TYPE;
     int NO_OF_SOIL_TYPES;
     vector<string> NAMES_OF_SOIL_TYPES;
     bool OLD_LAND_RENTING_PROCESS;

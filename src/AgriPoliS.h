@@ -253,6 +253,10 @@ DISTRIB_TYPE make_distribType(string str) {
 void setoptions(){
 gg->RUNS=atoi(optionsdata["RUNS"].c_str());
 gg->TEILER = atoi(optionsdata["TEILER"].c_str());
+gg->ZMQ_PORT_BASE = atoi(optionsdata["ZMQ_PORT_BASE"].c_str());
+gg->ZMQ_PORT_SEND = gg->ZMQ_PORT_BASE + 5000 ;
+gg->ZMQ_PORT_RECV = gg->ZMQ_PORT_BASE + 5001 ;
+
 
 gg->RL = optionsdata["RL"].compare("true") == 0 ? true : false;
 gg->RL_training = optionsdata["RL_TRAINING"].compare("true") == 0 ? true : false;

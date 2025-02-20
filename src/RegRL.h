@@ -45,7 +45,7 @@ double recv_val();
 
 RLdata getRLdata(RegFarmInfo*, RegManagerInfo*);
 
-void initzmq();
+void initzmq(int b);
 void output(RLdata, RegManagerInfo*, string);
 void sendRLdata(RLdata);
 #endif

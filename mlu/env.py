@@ -9,16 +9,16 @@ import zmq
 # number of input values
 len_in = 67
 
-def initzmq():
+def initzmq(port_base):
     global context, send_socket, recv_socket
     context = zmq.Context()
     send_socket = context.socket(zmq.PUSH)
 
-    send_addr = "tcp://localhost:5555"
+    send_addr = "tcp://localhost:"+str(port_base+5001) #5003"   #555"
     send_socket.connect(send_addr)
 
     recv_socket = context.socket(zmq.PULL)
-    recv_addr = "tcp://0.0.0.0:5557"
+    recv_addr = "tcp://0.0.0.0:"+str(port_base+5000) #5002" #557"
     recv_socket.bind(recv_addr)
 
 

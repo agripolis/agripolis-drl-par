@@ -62,9 +62,9 @@
     static zmq::socket_t sender_socket(context, ZMQ_PUSH);
     static zmq::socket_t receiver_socket(context, zmq::socket_type::pull);
 
-    void initzmq() {
-        sender_socket.connect("tcp://localhost:5557");
-        receiver_socket.bind("tcp://0.0.0.0:5555");
+    void initzmq(int b=0) {
+        sender_socket.connect("tcp://localhost:"+to_string(b+5000) ); //5557");
+        receiver_socket.bind("tcp://0.0.0.0:"+to_string(b+5001));  //5555");
         zmqinited = true;
         //cout << "zmq inited\n";
     }
@@ -255,6 +255,9 @@
     }
 
     RLdata getRLdata(RegFarmInfo* f, RegManagerInfo* m) {
+        if (!zmqinited)
+            initzmq(m->getGlobals()->ZMQ_PORT_BASE);
+
         if (!newIteration)
             return cachedRLdata;
 
@@ -356,13 +359,13 @@
         out << "\n\n";
         out.close();
 
-        if (!zmqinited)
-            initzmq();
+        //if (!zmqinited)
+         //   initzmq();
         send();
     }
 
     void sendRLdata(RLdata rldata) {
-        if (!zmqinited)
-            initzmq();
+        //if (!zmqinited)
+         //   initzmq();
         send();
     }

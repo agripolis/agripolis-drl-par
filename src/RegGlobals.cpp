@@ -176,6 +176,7 @@ CSimpleOpt::SOption g_rgOptions[] = {
 		//{ 50,  ("--REGION_OVERSIZE"),     SO_REQ_SEP },
 		//{ 60,  ("--REGION_NON_AG_LAND"),     SO_REQ_SEP },
 		{ 70,  ("--RUNS"),     SO_REQ_SEP},
+		{ 80,  ("--ZMQ_PORT_BASE"),     SO_REQ_SEP},
 		{ OPT_HELP, "--help", SO_NONE},
 		{ OPT_HELP, "-help", SO_NONE },
 		{ OPT_HELP, "-h", SO_NONE },
@@ -240,6 +241,10 @@ RegGlobalsInfo::readFromCommandLine() {
             //this->RUNS=atoi(args.OptionArg());
             break;
               
+        case 80:
+			options[&ZMQ_PORT_BASE] = atoi(args.OptionArg());
+            break;
+
         default:
             break;
         }
