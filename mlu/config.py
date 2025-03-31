@@ -13,8 +13,8 @@ inputfiles=home+"inputfiles/"
 temp_scenario="scenario-temp.txt"
 
 nInvs = 47
-epochs = 10 #2000 #3000
-simus = 10 #50 #50
-topn = 2 #5
+epochs = 1000 #2000 #3000
+simus = 135 #450 #50 #50
+topn = 20  #30 #5
 QSIZE = simus
 
