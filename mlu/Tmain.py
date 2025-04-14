@@ -5,7 +5,7 @@
 
 import subprocess
 from config import *
-from tenv import *
+from Tenv import *
 import pydata_pb2 as md
 from util import *
 from datetime import datetime
