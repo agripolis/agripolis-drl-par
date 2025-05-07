@@ -1,11 +1,14 @@
-FarmName DAIRY-FIF7		
+FarmName  DAIRY-FIF7		
 		
 !              Investition	Anzahl	Kapazitaet
 		
-INTCATTLE2	1	100
-		
-DAIRY4	1	200
-		
-PARLOUR2	2	140
-		
-MACHINERY5	1	50
+
+INTCATTLE2 	1	105
+
+DAIRY2		1	205
+
+PARLOUR_2	1	205
+
+MACHINERY4	1	100
+
+

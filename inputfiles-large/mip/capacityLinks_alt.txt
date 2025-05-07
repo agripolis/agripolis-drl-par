@@ -59,7 +59,7 @@
 	biogas_input_fertilizer	number	0		
 	set_aside_min	number	0		
 	set_aside_max	number	0		
-#	milk_quota	reference		milk	1
+	milk_quota	reference		milk	1
 	LU	number	0		
 	LU_upper_limit	number	1000		
 	crops	number	0		
@@ -85,8 +85,3 @@
 	first_30_ha	number	0		
 	count_next_16_ha	number	0		
 	next_16_ha	number	0		
-	tranch1	number	0		
-	tranch2	number	0		
-	tranch3	number	0		
-	tranch4	number	0		
-	tranch5	number	0		

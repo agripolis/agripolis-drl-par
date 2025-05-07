@@ -1,10 +1,8 @@
-"FarmName  CROP-FIF4
-"		
+FarmName  MIXED-PIF19		
 		
 !              Investition	Anzahl	Kapazitaet
 		
-EXTCATTLE4	1	30
-		
-MACHINERY4	1	100
-		
+
+EXTCATTLE3	2	10
+
 MACHINERY5	1	50

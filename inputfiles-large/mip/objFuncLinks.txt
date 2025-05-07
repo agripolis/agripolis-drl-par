@@ -12,5 +12,3 @@
 	DISINV_SUCKLER	number	0		
 	DISINV_DAIRY	number	0		
 	DISINV_VEALER	number	0		
-	DISINV_HENS	number  	0		
-	DISINV_BROILERS 	number	0		

@@ -1,8 +1,6 @@
-"FarmName  CROP-PIF3
-"		
+FarmName  CROP-PIF4		
 		
 !              Investition	Anzahl	Kapazitaet
 		
-"MACHINERY5
-"	1	50
-		
+
+MACHINERY5 	1	50

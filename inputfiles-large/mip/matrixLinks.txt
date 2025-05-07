@@ -11,26 +11,72 @@
 #============	===============				
 	liquidity/financing_rule	BARLEY	  market 	C	0.4
 	liquidity/financing_rule	WINTER_WHEAT	  market 	C	0.4
-	liquidity/financing_rule	SUMMER_WHEAT	  market 	C	0.4
+	liquidity/financing_rule	RAPE_SEED	  market 	C	0.4
 	liquidity/financing_rule	SUGAR_BEETS	  market 	C	0.4
-	liquidity/financing_rule	GRAIN_MAIZE	  market 	C	0.4
+	liquidity/financing_rule	PROTEIN_PLANTS	  market 	C	0.4
 	liquidity/financing_rule	MAIZE_SILAGE	  market 	C	0.4
+	liquidity/financing_rule	LEY	  market 	C	0.4
 	liquidity/financing_rule	POTATOES	  market 	C	0.4
-	liquidity/financing_rule	TRITICALE	  market 	C	0.4
-	liquidity/financing_rule	SPELT	  market 	C	0.4
-	liquidity/financing_rule	GRASS_SILAGE	  market 	C	0.2
-	liquidity/financing_rule	PASTURE	  market 	C	0.2
+	liquidity/financing_rule	RYE	  market 	C	0.4
+	liquidity/financing_rule	RYE_BIOGAS	  market 	C	0.4
+	liquidity/financing_rule	GPS	  market 	C	0.2
+	liquidity/financing_rule	GRASSILAGE_INT	  market 	C	0.2
+	liquidity/financing_rule	GRASSILAGE_EXT	  market 	C	0.2
+	liquidity/financing_rule	PORTIONSWEIDE	  market 	C	0.2
+	liquidity/financing_rule	UMTRIEBSWEIDE	  market 	C	0.2
+	liquidity/financing_rule	STANDWEIDE	  market 	C	0.2
 	liquidity/financing_rule	SOWS	  market 	C	0.4
 	liquidity/financing_rule	FATTENING_PIGS	  market 	C	0.27
+	liquidity/financing_rule	BULL_DAIRY_INT	  market 	C	0.66
 	liquidity/financing_rule	BULL_SUCKLER	  market 	C	0.66
 	liquidity/financing_rule	SUCKLER_COW	  market 	C	0.66
 	liquidity/financing_rule	DAIRY_COW	  market 	C	0.2
 	liquidity/financing_rule	HEIFER_SUCKLER	  market 	C	0.66
 	liquidity/financing_rule	HEIFER_DAIRY	  market 	C	0.66
-	liquidity/financing_rule	HENS	market	C	0.66
-	liquidity/financing_rule	BROILERS	market	C	0.66
+	liquidity/financing_rule	BIOGAS_I_150kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_150kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_150kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_IV_150kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_450kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_450kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_450kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_IV_450kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_800kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_800kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_800kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_IV_800kW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS150KW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS450KW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS800KW	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_150kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_150kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_150kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_450kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_450kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_450kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_800kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_800kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_800kW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS150KW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS450KW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS800KW_N	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_150kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_150kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_150kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_450kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_450kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_450kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_I_800kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_II_800kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS_III_800kW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS150KW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS450KW_N14	  market 	C	0.5
+	liquidity/financing_rule	BIOGAS800KW_N14	  market 	C	0.5
+	liquidity/financing_rule	SET_ASIDE	  market 	C	0.4
 	liquidity/financing_rule	DAIRY_CALF_SELL	  market 	C	1
+	liquidity/financing_rule	DAIRY_CALF_BUY	  market 	C	1
 	liquidity/financing_rule	SUCKLER_CALF_SELL	  market 	C	1
+	liquidity/financing_rule	SUCKLER_CALF_BUY	  market 	C	1
 	liquidity/financing_rule	MANURE_SELL	  market 	C	0
 	liquidity/financing_rule	MANURE_BUY	  market 	C	0
 	liquidity/financing_rule	LEASE_QUOTA	  market 	C	0
@@ -38,6 +84,7 @@
 	liquidity/financing_rule	COUPLED_PREM_UNMOD	  market 	C	0
 	liquidity/financing_rule	DECOUPLED_PREM_UNMOD	  market 	C	0
 	liquidity/financing_rule	TOTAL_PREM_MODULATED	  market 	C	0
+	liquidity/financing_rule	Premium_AWU	  market 	C	0
 	liquidity/financing_rule	TRANCH_1	  market 	C	0
 	liquidity/financing_rule	TRANCH_2	  market 	C	0
 	liquidity/financing_rule	TRANCH_3	  market 	C	0
