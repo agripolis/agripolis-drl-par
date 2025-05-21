@@ -5,11 +5,11 @@ policy_file: policy_settings.txt
 
 [Options]
 Teiler	10
-Runs 	10
+Runs 	15
 
-RL      true
-RL_training     false
-RL_farmID       11
+RL	 true
+RL_training	 false
+RL_farmID	 11
 
 ManagerCoeffDistribution	Normal
 ManagerDemographics	false
@@ -18,5 +18,5 @@ AGE_DEPENDENT	true
 [Globals]
 ManagerDev		0.1
 rent_adjust_factor	0.5	
-MIN_CONTRACT_LENGTH   	3	
-MAX_CONTRACT_LENGTH   	8
+MIN_CONTRACT_LENGTH   	6	
+MAX_CONTRACT_LENGTH   	11

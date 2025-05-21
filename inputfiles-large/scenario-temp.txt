@@ -7,9 +7,9 @@ policy_file: policy_settings.txt
 Teiler	10
 Runs 	10
 
-RL      true
-RL_training     false
-RL_farmID       11
+RL	 true
+RL_training	 false
+RL_farmID	 11
 
 ManagerCoeffDistribution	Normal
 ManagerDemographics	false

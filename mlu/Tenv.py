@@ -7,14 +7,14 @@ import pydata_pb2 as md
 import zmq
 
 # number of input values
-len_in = 67
+len_in = 78  #67
 
 s_socks=[]
 r_socks=[]
 def initzmq0(n):
     global context, s_socks, r_socks
     context = zmq.Context()
-    for i in range(n):
+    for i in range(n+1):
         send_addr = "tcp://localhost:"+str(2*i+5001)
         send_socket = context.socket(zmq.PUSH)
         send_socket.connect(send_addr)
@@ -83,7 +83,7 @@ def closezmq():
 
 def closezmq0(n):
     global context, s_socks, r_socks
-    for i in range(n):
+    for i in range(n+1):
         s_socks[i].close()
         r_socks[i].close()
     context.term()

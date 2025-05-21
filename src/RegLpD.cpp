@@ -626,7 +626,7 @@ void RegLpInfo::glp_solve(){
 	glp_smcp cparm;
 	glp_init_smcp(&cparm);
 	cparm.msg_lev=GLP_MSG_OFF;
-	cparm.tm_lim=60000; //milliseconds
+	cparm.tm_lim=1000; //milliseconds,  normal 60000
 
 	int ia[1+MAX_NUM], ja[1+MAX_NUM];  // ? globale constant 
 	double ar[1+MAX_NUM]; //array of the non-zero coefficients 

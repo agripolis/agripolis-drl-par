@@ -123,7 +123,7 @@ def outputModel(e):
     with open(resdir+"state_scaler-"+str(e)+".pkl", "wb") as f:
        pickle.dump(agent.memory.scalers[0], f)
     cf.write(str(e)+"\t"+str(best_reward)+"\n")
-    cf.flush()
+    #cf.flush()
     
     #outputScaler(e, agent.memory.scalers[0])
     agent.memory.outputAll(resdir+"mtrain-"+str(e)+".dat")
@@ -132,7 +132,7 @@ def outputModel(e):
 
 
 def testing(e):
-    #print("evaluating ...\n")
+    #print("evaluating ...\n",flush=True)
     closed=False
     agpt=subprocess.Popen([agpy, "--ZMQ_PORT_BASE=" + str(zmq_port_base), inputfiles, mkscenario(inputfiles+temp_scenario, e) ], 
             stdout=subprocess.PIPE,
@@ -155,7 +155,8 @@ def testing(e):
             send_beta(beta)
 
             rew = recv_ec()
-            #print("beta, rew: ", beta, rew)
+            #print("beta, rew: ", beta, rew, flush=True)
+            #print(f"beta: {beta}, rew:  {rew}\n", flush=True)
             testf.write(f"beta, rew: {beta}, {rew}\n")
             
             rc = recv_closed()
@@ -166,6 +167,7 @@ def testing(e):
             st=[-1]
             beta=-1
             rew= recv_ec()
+            #print("closed!\n", flush=True)
 
         cum_reward += rew
 
@@ -177,7 +179,7 @@ def get_ep(e):
     global best_reward
     global min_c_reward
 
-    max_sig=0.51
+    max_sig=0.41
     min_sig=0.01
     d_sig=0.1
     d_simu=5
@@ -191,14 +193,17 @@ def get_ep(e):
         # print(i)
         sig=min_sig+ i*(max_sig-min_sig)/nthread
         q = queue.PriorityQueue(int(simus/nthread))
-        p=Thread(target=simuls, args=(e, i,int(simus/nthread), agent, sig, q))
+        p=Thread(target=simuls, args=(e, i+2,int(simus/nthread), agent, sig, q))
         pss.append(p)
         qss.append(q)
     
     for p in pss:
         p.start()
 
+    xi=0
     for x in pss:
+        #print(xi,flush=True)
+        xi+=1
         x.join()
 
     #print("T: ", datetime.now()-t1)
@@ -230,9 +235,10 @@ def get_ep(e):
         for i in range(topn):
             agent.update(batch_size)  #learning()
             
-    if e % 1 == 0:
+    #if (e==0 or (e+1) % 2  == 0):
+    if e % 1  == 0:
         testreward = testing(e)
-        #print(f'--test--: {testreward}')
+        #print(f'--test--: {testreward}', flush=True)
         if testreward > best_reward:
             best_reward = testreward 
             outputModel(e)
@@ -241,6 +247,7 @@ def get_ep(e):
         else:
             #print(testreward,'\n')
             testf.write(str(testreward)+'\n\n')
+        #testf.flush()
 
 outputMemory = True
 LenMem = 10000
@@ -258,7 +265,7 @@ if __name__ == '__main__':
        #    #print(sigma_noise)
    
        noise.reset()
-       #print(f"======= epoch {e} =========") 
+       print(f"======= epoch {e} =========", flush=True) 
        testf.write(f'======= epoch {e} =========\n') 
        get_ep(e)
    
