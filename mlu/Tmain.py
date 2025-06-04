@@ -10,7 +10,7 @@ import pydata_pb2 as md
 from util import *
 from datetime import datetime
 
-from threading import Thread
+from threading import Thread, Lock
 
 from ANET import *
 
@@ -33,6 +33,10 @@ Path(resdir).mkdir(parents=True, exist_ok=True)
 
 cf= open(resdir+"best_cum_rew.txt", "at")
 testf = open(resdir+"testing.txt", "at")
+
+fin_Lock=Lock()
+nthread_finished = 0
+diff_thread= 10 # allow threads leaving jobs undone
 
 min_beta = 0.
 max_beta = 2 
@@ -58,8 +62,24 @@ res=queue.PriorityQueue(QSIZE)
 
 # parallelizing with threading
 def simuls(e, i, nsim, ag, sig, resq):
+  global nthread
+  global nthread_finished
+  global fin_Lock
+  global diff_thread
+
   noi = GaussNoise(sigma=sig)
+  fin = False
+
   for s in range(nsim):
+    if nthread_finished >= nthread - diff_thread:
+        fin=True
+    if fin:
+        #print(f"epoch {e} zmqi {i}: {s}", flush=True)
+        break
+    if s==nsim-1:
+        with fin_Lock:
+           nthread_finished += 1
+
     closed=False
 
     #tp=subprocess.Popen(["python",  "testmp.py", str(i), str(zmqbaseport)] , stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -234,6 +254,8 @@ def get_ep(e):
         agent.memory.norm()
         for i in range(topn):
             agent.update(batch_size)  #learning()
+            agent.update(batch_size)  # 2x learning()
+            agent.update(batch_size)  # 3x learning()
             
     #if (e==0 or (e+1) % 2  == 0):
     if e % 1  == 0:
@@ -254,21 +276,27 @@ LenMem = 10000
 curlen  = 0
 
 if __name__ == '__main__':
-   nthread = 45 
+   nthread = 90 
 
    initzmq0(nthread)
 
    for e in range(epochs):
+
        #if (e+1) % d_epocs == 0:
        #    sigma_noise -= d_noise_sigma
        #    noise.set_sigma(max(min_noise_sigma, sigma_noise)) 
        #    #print(sigma_noise)
    
+       nthread_finished = 0
+
        noise.reset()
        print(f"======= epoch {e} =========", flush=True) 
        testf.write(f'======= epoch {e} =========\n') 
+
        get_ep(e)
-   
+       testf.write(f'finished threads: {nthread_finished}\n\n')
+        
+       
        buflen = len(agent.memory)
    
    cf.close()
