@@ -5,7 +5,7 @@
 
 import os
 
-runs=14
+runs=9
 home=os.environ['HOME']+'/ALTMARK/agripolis-drl-par/'
 
 agpy=home+"build/src/agp24"
